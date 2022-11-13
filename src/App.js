@@ -55,14 +55,6 @@ function App() {
           <p>filter-1</p>
           <p>filter-2</p>
           <p>filter-3</p>
-
-          <div className="cart">
-            <h2>Shopping Cart</h2>
-            {Object.keys(cart.items).map((key) => (
-              <p>{cart.items[key]}x {key}</p>
-            ))}
-            <p>Total: ${Math.round(cart.price * 100) / 100}</p>
-          </div>
         </div>
 
         <div className='groceryItems'>
@@ -70,6 +62,14 @@ function App() {
           <GroceryItem item={item} addToCart={addToCart} removeFromCart={removeFromCart} count= {item.name in cart.items ? cart.items[item.name] : 0} index={index}></GroceryItem>
           ))}
         </div>
+
+        <div className="cart">
+            <h2>Shopping Cart</h2>
+            {Object.keys(cart.items).map((key) => (
+              <p>{cart.items[key]}x {key}</p>
+            ))}
+            <p>Total: ${Math.round(cart.price * 100) / 100}</p>
+          </div>
 
       </div>
     </div>

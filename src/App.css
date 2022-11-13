@@ -17,7 +17,7 @@
 .filter-area {
   display: flex;
   position: sticky;
-  top: 0;
+  top: 25%;
   align-self: flex-start;
   flex-direction: column;
   padding: 0rem 0rem 0rem 4rem;
@@ -41,14 +41,13 @@
 .groceryItems {
   display: flex;
   flex-flow: row wrap;
-  max-width: 60rem;
-  margin-left: 1.5rem;
+  max-width: 50rem;
 }
 
 
 .groceryItem {
   max-width: 15rem;
-  margin: 2rem 12rem 5rem 0rem;
+  margin: 1rem 9rem 5rem 1rem;
 }
 
 .groceryItem img {
