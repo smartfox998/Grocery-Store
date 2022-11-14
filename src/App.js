@@ -60,7 +60,7 @@ function App() {
     };
 
     sortItems(sortType);
-  }, [sortType, data]);
+  }, [sortType, filterType, filterAvailable]);
 
 
   useEffect(() => {
