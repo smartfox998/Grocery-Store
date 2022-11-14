@@ -6,7 +6,7 @@
 .title {
   width: 40%;
   height: auto;
-  margin: 1rem;
+  margin: 2rem 2rem 2rem 4rem;
 }
 
 .content {
@@ -21,7 +21,11 @@
   align-self: flex-start;
   flex-direction: column;
   padding: 0rem 0rem 0rem 4rem;
-  min-width: 20rem;
+  margin: 1rem 4rem 0rem 4rem;
+  min-width: 18rem;
+  border: 2px solid #d2d2d2;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px #d2d2d2;
 }
 
 .cart {
