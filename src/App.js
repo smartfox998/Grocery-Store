@@ -4,6 +4,7 @@ import groceryData from "./assets/grocery_data.json";
 import DisplayList from "./components/DisplayList";
 import TypeFilter from "./components/TypeFilter";
 import AvailableFilter from './components/AvailableFilter';
+import Cart from './components/Cart';
 
 groceryData.forEach((item) => {
   item.image = process.env.PUBLIC_URL + "/" + item.image;
@@ -91,12 +92,8 @@ function App() {
         <DisplayList data={data} cart={cart} setCart={setCart}></DisplayList>
 
         <div className="cart">
-            <h2>Shopping Cart</h2>
-            {Object.keys(cart.items).map((key) => (
-              <p>{cart.items[key]}x {key}</p>
-            ))}
-            <p>Total: ${Math.round(cart.price * 100) / 100}</p>
-          </div>
+          <Cart cart={cart}></Cart>
+        </div>
 
       </div>
     </div>
