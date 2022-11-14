@@ -37,10 +37,14 @@
   display: flex;
   position: sticky;
   top: 0;
+  right: 0;
   align-self: flex-start;
   flex-direction: column;
   min-width: 10rem;
   margin-left: 3.5rem;
+  position: fixed;
+  right: 9rem;
+  top: 15rem;
 }
 
 .cart p {
