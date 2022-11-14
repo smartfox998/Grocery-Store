@@ -9,6 +9,7 @@ groceryData.forEach((item) => {
 
 function App() {
   const [cart, setCart] = useState({items: {}, price: 0})
+  const [data, setData] = useState(groceryData);
 
   const addToCart = (index) => {
     const item = groceryData[index]
@@ -42,6 +43,17 @@ function App() {
     }
   }
 
+  const sortItems = type => {
+    const types = {
+      price: 'price',
+      rating: 'rating'
+    };
+    const sortProperty = types[type];
+    const sorted = [...data].sort((a, b) => b[sortProperty] - a[sortProperty]);
+    console.log(sorted);
+    setData(sorted);
+  };
+
 
   return (
     <div className="App">
@@ -53,10 +65,10 @@ function App() {
         <div className='filter-area'>
           <h3 style={{paddingLeft: "0.4rem"}}>Sort By</h3>
           <form action="" method="post">
-            <input type="radio" name="sort" value="price" checked /> Price
+            <input type="radio" name="sort" value="price" onClick={(e) => sortItems(e.target.value)}/> Price
             <br></br>
             <br></br>
-            <input type="radio" name="sort" value="rating" /> Rating
+            <input type="radio" name="sort" value="rating" onClick={(e) => sortItems(e.target.value)}/> Rating
           </form>
 
           <br></br>
@@ -98,7 +110,7 @@ function App() {
         </div>
 
         <div className='groceryItems'>
-          {groceryData.map((item, index) => (
+          {data.map((item, index) => (
           <GroceryItem item={item} addToCart={addToCart} removeFromCart={removeFromCart} count= {item.name in cart.items ? cart.items[item.name] : 0} index={index}></GroceryItem>
           ))}
         </div>
