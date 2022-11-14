@@ -49,11 +49,7 @@ function App() {
 
   useEffect(() => {
     const sortItems = type => {
-      const types = {
-        price: 'price',
-        rating: 'rating'
-      };
-      const sortProperty = types[type];
+      const sortProperty = type;
       const sorted = [...data].sort((a, b) => b[sortProperty] - a[sortProperty]);
       setData(sorted);
       setFilterItems(sorted);
@@ -67,12 +63,14 @@ function App() {
       const filterItemByType = type => {
         if (type !== "All"){
           const filtered = [...groceryData].filter(item => item.type === type);
-          setData(filtered);
-          setFilterItems(filtered);
+          const sorted = [...filtered].sort((a, b) => b[sortType] - a[sortType]);
+          setData(sorted);
+          setFilterItems(sorted);
         }
         else{
-          setData(groceryData);
-          setFilterItems(groceryData);
+          const sorted = [...groceryData].sort((a, b) => b[sortType] - a[sortType]);
+          setData(sorted);
+          setFilterItems(sorted);
         }
       }
 
