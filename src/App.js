@@ -1,7 +1,9 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import groceryData from "./assets/grocery_data.json";
-import GroceryItem from "./components/GroceryItem.js";
+import DisplayList from "./components/DisplayList";
+import TypeFilter from "./components/TypeFilter";
+import AvailableFilter from './components/AvailableFilter';
 
 groceryData.forEach((item) => {
   item.image = process.env.PUBLIC_URL + "/" + item.image;
@@ -14,38 +16,6 @@ function App() {
   const [filterItems, setFilterItems] = useState(groceryData);
   const [filterType, setFilterType] = useState("All");
   const [filterAvailable, setFilterAvailable] = useState("All");
-
-  const addToCart = (index) => {
-    const item = data[index]
-    const name = item.name
-    const currentCart = cart.items
-
-    if (name in currentCart){
-      currentCart[name] += 1
-    }
-    else{
-      currentCart[name] = 1
-    }
-
-    const total = cart.price + item.price
-    setCart({items: currentCart, price: total})
-  }
-
-  const removeFromCart = (index) => {
-    const item = data[index]
-    const name = item.name
-    const currentCart = cart.items
-
-    if (name in currentCart){
-      currentCart[name] -= 1
-      const total = cart.price - item.price
-      setCart({items: currentCart, price: total})
-
-      if (currentCart[name] === 0){
-        delete currentCart[name]
-      }
-    }
-  }
 
   useEffect(() => {
     const sortItems = type => {
@@ -93,7 +63,6 @@ function App() {
     filterItemByAvailable(filterAvailable);
 }, [filterAvailable]);
 
-
   return (
     <div className="App">
       <div>
@@ -103,7 +72,7 @@ function App() {
       <div className='content'>
         <div className='filter-area'>
           <h3 style={{paddingLeft: "0.4rem"}}>Sort By</h3>
-          <form action="" method="post">
+          <form>
             <input type="radio" name="sort" value="price" onClick={(e) => setSortType(e.target.value)}/> Price
             <br></br>
             <br></br>
@@ -112,55 +81,14 @@ function App() {
 
           <br></br>
 
-          <h3 style={{paddingLeft: "0.5rem"}}>Types</h3>
-          <div>
-            <input type="checkbox" id="all" name="types" checked={filterType === "All"} onChange={() => setFilterType("All")}/>
-            <label for="fruits"> All</label>
-            <br></br>
-            <br></br>
-            <input type="checkbox" id="fruits" name="types" checked={filterType === "Fresh Fruits"} onChange={() => setFilterType("Fresh Fruits")}/>
-            <label for="fruits"> Fresh Fruits</label>
-            <br></br>
-            <br></br>
-            <input type="checkbox" id="beverages" name="types" checked={filterType === "Beverages"} onChange={() => setFilterType("Beverages")}/>
-            <label for="beverages"> Beverages</label>
-            <br></br>
-            <br></br>
-            <input type="checkbox" id="dairy&eggs" name="types" checked={filterType === "Dairy & Eggs"} onChange={() => setFilterType("Dairy & Eggs")}/>
-            <label for="dairy&eggs"> Dairy & Eggs</label>
-            <br></br>
-            <br></br>
-            <input type="checkbox" id="bakery&bread" name="types" checked={filterType === "Bakery & Bread"} onChange={() => setFilterType("Bakery & Bread")}/>
-            <label for="bakery&bread"> Bakery & Bread</label>
-            <br></br>
-            <br></br>
-            <input type="checkbox" id="meat&seafood" name="types" checked={filterType === "Meat & Seafood"} onChange={() => setFilterType("Meat & Seafood")}/>
-            <label for="meat&seafood"> Meat & Seafood</label>
-          </div>
+          <TypeFilter filterType={filterType} setFilterType={setFilterType}></TypeFilter>
 
           <br></br>
                 
-          <h3 style={{paddingLeft: "0.5rem"}}>Available</h3>
-          <div>
-            <input type="checkbox" id="all" name="available" checked={filterAvailable === "All"} onChange={() => setFilterAvailable("All")}/>
-            <label for="pickup"> All</label>
-            <br></br>
-            <br></br>
-            <input type="checkbox" id="pickup" name="available" checked={filterAvailable === "Pickup"} onChange={() => setFilterAvailable("Pickup")}/>
-            <label for="pickup"> Pickup</label>
-            <br></br>
-            <br></br>
-            <input type="checkbox" id="delivery" name="available" checked={filterAvailable === "Delivery"} onChange={() => setFilterAvailable("Delivery")}/>
-            <label for="delivery"> Delivery</label>
-          </div>
-
+          <AvailableFilter filterAvailable={filterAvailable} setFilterAvailable={setFilterAvailable}></AvailableFilter>
         </div>
 
-        <div className='groceryItems'>
-          {data.map((item, index) => (
-          <GroceryItem item={item} addToCart={addToCart} removeFromCart={removeFromCart} count= {item.name in cart.items ? cart.items[item.name] : 0} index={index}></GroceryItem>
-          ))}
-        </div>
+        <DisplayList data={data} cart={cart} setCart={setCart}></DisplayList>
 
         <div className="cart">
             <h2>Shopping Cart</h2>
