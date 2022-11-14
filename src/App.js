@@ -59,9 +59,41 @@ function App() {
             <input type="radio" name="sort" value="rating" /> Rating
           </form>
 
+          <br></br>
+
           <h3 style={{paddingLeft: "0.5rem"}}>Types</h3>
-          
+          <div>
+            <input type="checkbox" id="fruits" name="types" />
+            <label for="fruits"> Fresh Fruits</label>
+            <br></br>
+            <br></br>
+            <input type="checkbox" id="beverages" name="types" />
+            <label for="beverages"> Beverages</label>
+            <br></br>
+            <br></br>
+            <input type="checkbox" id="dairy&eggs" name="types" />
+            <label for="dairy&eggs"> Dairy & Eggs</label>
+            <br></br>
+            <br></br>
+            <input type="checkbox" id="bakery&bread" name="types" />
+            <label for="bakery&bread"> Bakery & Bread</label>
+            <br></br>
+            <br></br>
+            <input type="checkbox" id="meat&seafood" name="types" />
+            <label for="meat&seafood"> Meat & Seafood</label>
+          </div>
+
+          <br></br>
+                
           <h3 style={{paddingLeft: "0.5rem"}}>Available</h3>
+          <div>
+            <input type="checkbox" id="pickup" name="available" />
+            <label for="pickup"> Pickup</label>
+            <br></br>
+            <br></br>
+            <input type="checkbox" id="delivery" name="available" />
+            <label for="delivery"> Delivery</label>
+          </div>
 
         </div>
 
