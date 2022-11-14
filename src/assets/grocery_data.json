@@ -3,7 +3,7 @@
         "name": "Organic Bananas, Bunch",
         "image": "images/bananas.png",
         "type": "Fresh Fruits",
-        "available": ["Pickup"],
+        "available": ["Pickup", "Delivery"],
         "rating": 4.1,
         "price": 1.70
     },
@@ -11,7 +11,7 @@
         "name": "Diet Coke, 24 Pack",
         "image": "images/coke.png",
         "type": "Beverages",
-        "available": ["Delivery"],
+        "available": ["Pickup", "Delivery"],
         "rating": 4.4,
         "price": 11.98
     },
@@ -19,7 +19,7 @@
         "name": "2% Reduced Fat Milk, 52 fl oz",
         "image": "images/milk.png",
         "type": "Dairy & Eggs",
-        "available": ["Pickup"],
+        "available": ["Pickup", "Delivery"],
         "rating": 4.4,
         "price": 3.98
     },
@@ -27,7 +27,7 @@
         "name": "White Round Top Bread Loaf, 20 oz",
         "image": "images/bread.png",
         "type": "Bakery & Bread",
-        "available": ["Delivery"],
+        "available": ["Pickup", "Delivery"],
         "rating": 2.8,
         "price": 1.10
     },
@@ -35,7 +35,7 @@
         "name": "Watermelon Seedless",
         "image": "images/watermelon.png",
         "type": "Fresh Fruits",
-        "available": ["Pickup"],
+        "available": ["Pickup", "Delivery"],
         "rating": 1.7,
         "price": 6.68
     },
@@ -67,7 +67,7 @@
         "name": "Salted Butter, 1 lb",
         "image": "images/butter.png",
         "type": "Dairy & Eggs",
-        "available": ["Pickup"],
+        "available": ["Pickup", "Delivery"],
         "rating": 4.9,
         "price": 5.78
     },
@@ -83,7 +83,7 @@
         "name": "Frozen Young Turkey, 10-16lbs",
         "image": "images/turkey.png",
         "type": "Meat & Seafood",
-        "available": ["Pickup"],
+        "available": ["Pickup", "Delivery"],
         "rating": 3.9,
         "price": 16.91
     },
@@ -99,7 +99,7 @@
         "name": "10 inch Apple Pie, 39 oz",
         "image": "images/apple_pie.png",
         "type": "Bakery & Bread",
-        "available": ["Pickup"],
+        "available": ["Pickup", "Delivery"],
         "rating": 2.7,
         "price": 5.98
     },

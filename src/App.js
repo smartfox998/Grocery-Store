@@ -60,28 +60,31 @@ function App() {
     };
 
     sortItems(sortType);
-  }, [sortType, data, filterItems]);
+  }, [sortType, data]);
+
 
   useEffect(() => {
       const filterItemByType = type => {
         if (type !== "All"){
           const filtered = [...groceryData].filter(item => item.type === type);
           setData(filtered);
-          setFilterItems(filtered)
+          setFilterItems(filtered);
         }
         else{
           setData(groceryData);
-          setFilterItems(groceryData)
+          setFilterItems(groceryData);
         }
       }
 
       filterItemByType(filterType);
   }, [filterType]);
 
+
   useEffect(() => {
     const filterItemByAvailable = available => {
       if (available !== "All"){
-        const filtered = [...filterItems].filter(item => item.available === available);
+        console.log(available)
+        const filtered = [...filterItems].filter(item => item.available.includes(available));
         setData(filtered);
       }
       else{
