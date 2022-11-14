@@ -51,10 +51,18 @@ function App() {
 
       <div className='content'>
         <div className='filter-area'>
-          <h2>This is the filter area</h2>
-          <p>filter-1</p>
-          <p>filter-2</p>
-          <p>filter-3</p>
+          <h3 style={{paddingLeft: "0.4rem"}}>Sort By</h3>
+          <form action="" method="post">
+            <input type="radio" name="sort" value="price" checked /> Price
+            <br></br>
+            <br></br>
+            <input type="radio" name="sort" value="rating" /> Rating
+          </form>
+
+          <h3 style={{paddingLeft: "0.5rem"}}>Types</h3>
+          
+          <h3 style={{paddingLeft: "0.5rem"}}>Available</h3>
+
         </div>
 
         <div className='groceryItems'>
