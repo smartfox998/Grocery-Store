@@ -55,10 +55,12 @@ function App() {
         
       if (available !== "All"){
         const filtered = [...items].filter(item => item.available.includes(available));
-        setData(filtered);
+        const sorted = [...filtered].sort((a, b) => b[sortType] - a[sortType]);
+        setData(sorted);
       }
       else{
-        setData(items);
+        const sorted = [...items].sort((a, b) => b[sortType] - a[sortType]);
+        setData(sorted);
       }
     }
 
