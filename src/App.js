@@ -15,7 +15,6 @@ function App() {
   const [cart, setCart] = useState({items: {}, price: 0})
   const [data, setData] = useState(groceryData);
   const [sortType, setSortType] = useState();
-  const [filterItems, setFilterItems] = useState(groceryData);
   const [filterType, setFilterType] = useState("All");
   const [filterAvailable, setFilterAvailable] = useState("All");
 
@@ -36,28 +35,30 @@ function App() {
           const filtered = [...groceryData].filter(item => item.type === type);
           const sorted = [...filtered].sort((a, b) => b[sortType] - a[sortType]);
           setData(sorted);
-          setFilterItems(sorted);
         }
         else{
           const sorted = [...groceryData].sort((a, b) => b[sortType] - a[sortType]);
           setData(sorted);
-          setFilterItems(sorted);
         }
       }
 
       filterItemByType(filterType);
-  }, [sortType, filterType]);
+  }, [filterType]);
 
 
   useEffect(() => {
     const filterItemByAvailable = available => {
+      var items = [...groceryData];
+      if (filterType !== "All"){
+        items = [...groceryData].filter(item => item.type === filterType);
+      }
+        
       if (available !== "All"){
-        console.log(available)
-        const filtered = [...filterItems].filter(item => item.available.includes(available));
+        const filtered = [...items].filter(item => item.available.includes(available));
         setData(filtered);
       }
       else{
-        setData(filterItems);
+        setData(items);
       }
     }
 
