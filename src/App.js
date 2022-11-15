@@ -2,9 +2,13 @@ import './App.css';
 import { useState, useEffect } from "react";
 import groceryData from "./assets/grocery_data.json";
 import DisplayList from "./components/DisplayList";
-import TypeFilter from "./components/TypeFilter";
-import AvailableFilter from './components/AvailableFilter';
-import Cart from './components/Cart';
+import TypeFilter from "./components/TypeFilterSection";
+import AvailableFilter from './components/AvailableFilterSection';
+import Cart from './components/CartSection';
+import TypeFilterSection from './components/TypeFilterSection';
+import AvailableFilterSection from './components/AvailableFilterSection';
+import CartSection from './components/CartSection';
+import SortSection from './components/SortSection';
 
 groceryData.forEach((item) => {
   item.image = process.env.PUBLIC_URL + "/" + item.image;
@@ -26,7 +30,7 @@ function App() {
     };
 
     sortItems(sortType);
-  }, [sortType, filterType, filterAvailable]);
+  }, [sortType]);
 
 
   useEffect(() => {
@@ -71,27 +75,21 @@ function App() {
 
       <div className='content'>
         <div className='filter-area'>
-          <h3 style={{paddingLeft: "0.4rem"}}>Sort By</h3>
-          <form>
-            <input type="radio" name="sort" value="price" onClick={(e) => setSortType(e.target.value)}/> Price
-            <br></br>
-            <br></br>
-            <input type="radio" name="sort" value="rating" onClick={(e) => setSortType(e.target.value)}/> Rating
-          </form>
+          <SortSection setSortType={setSortType}></SortSection>
 
           <br></br>
 
-          <TypeFilter filterType={filterType} setFilterType={setFilterType}></TypeFilter>
+          <TypeFilterSection filterType={filterType} setFilterType={setFilterType}></TypeFilterSection>
 
           <br></br>
                 
-          <AvailableFilter filterAvailable={filterAvailable} setFilterAvailable={setFilterAvailable}></AvailableFilter>
+          <AvailableFilterSection filterAvailable={filterAvailable} setFilterAvailable={setFilterAvailable}></AvailableFilterSection>
         </div>
 
         <DisplayList data={data} cart={cart} setCart={setCart}></DisplayList>
 
         <div className="cart">
-          <Cart cart={cart}></Cart>
+          <CartSection cart={cart}></CartSection>
         </div>
 
       </div>

@@ -1,4 +1,4 @@
-function TypeFilter(props) {
+function TypeFilterSection(props) {
     return (
        <div>
         <h3 style={{paddingLeft: "0.5rem"}}>Types</h3>
@@ -31,4 +31,4 @@ function TypeFilter(props) {
 }
 
 
-export default TypeFilter;
+export default TypeFilterSection;

@@ -1,4 +1,4 @@
-function AvailableFilter(props) {
+function AvailableFilterSection(props) {
     return (
        <div>
         <h3 style={{paddingLeft: "0.5rem"}}>Available</h3>
@@ -18,5 +18,4 @@ function AvailableFilter(props) {
     )
 }
 
-
-export default AvailableFilter;
+export default AvailableFilterSection;

@@ -1,4 +1,4 @@
-function Cart(props) {
+function CartSection(props) {
     return (
         <div>
             <h2>Shopping Cart</h2>
@@ -10,4 +10,4 @@ function Cart(props) {
     )
 }
 
-export default Cart;
+export default CartSection;
