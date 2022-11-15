@@ -23,7 +23,6 @@ function App() {
       const sortProperty = type;
       const sorted = [...data].sort((a, b) => b[sortProperty] - a[sortProperty]);
       setData(sorted);
-      setFilterItems(sorted);
     };
 
     sortItems(sortType);
@@ -46,7 +45,7 @@ function App() {
       }
 
       filterItemByType(filterType);
-  }, [filterType]);
+  }, [sortType, filterType]);
 
 
   useEffect(() => {
@@ -67,7 +66,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <img className='title' src={require('./title.png')} alt="title image"/>
+        <img className='title' src={require('./title.png')} alt='title section'/>
       </div>
 
       <div className='content'>
