@@ -31,8 +31,13 @@ function App() {
 
   useEffect(() => {
       const filterItemByType = type => {
+        var items = [...groceryData];
+        if (filterAvailable !== "All"){
+          items = [...groceryData].filter(item => item.available.includes(filterAvailable));
+        }
+
         if (type !== "All"){
-          const filtered = [...groceryData].filter(item => item.type === type);
+          const filtered = [...items].filter(item => item.type === type);
           const sorted = [...filtered].sort((a, b) => b[sortType] - a[sortType]);
           setData(sorted);
         }
