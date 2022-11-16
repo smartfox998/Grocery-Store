@@ -42,7 +42,7 @@ function App() {
           setData(sorted);
         }
         else{
-          const sorted = [...groceryData].sort((a, b) => b[sortType] - a[sortType]);
+          const sorted = [...items].sort((a, b) => b[sortType] - a[sortType]);
           setData(sorted);
         }
       }
