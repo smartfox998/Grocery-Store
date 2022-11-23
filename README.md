@@ -8,6 +8,8 @@ This is an application that can be used by grocery store. Users can add or remov
 
 ### Usability Principles Considered
 
+* The 
+
 * The shopping cart is sticked on the right to make sure users could always see the updates.
 
 * The filter and sort section is sticked on the left, it won't disappear when users scroll down or up to browse through products.
@@ -15,8 +17,6 @@ This is an application that can be used by grocery store. Users can add or remov
 * There is a **All** choice for both two filters to make sure users could revert back to the original state without refreshing the page.
 
 ### Organization of Components
-
-There are 6 components in total in this application:
 
 * TypeFilterSection: This is the component for the filter that can filter products by type.
 
@@ -31,6 +31,12 @@ There are 6 components in total in this application:
 * SortSection: This is the component for sort section, which includes two sort methods --- sort by price and sort by rating.
 
 ### How Data is Passed Down Through Components
+
+* Total cost in the shopping cart:
+
+* Display products with different filters:
+
+* Display products with sort:
 
 ### How the User Triggers State Changes
 
