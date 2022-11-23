@@ -16,11 +16,19 @@ This is an application that can be used by grocery store. Users can add or remov
 
 ### Organization of Components
 
-There are 6 components in total:
+There are 6 components in total in this application:
 
-* TypeFilterSection: This is the component 
+* TypeFilterSection: This is the component for the filter that can filter products by type.
 
-* AvailableFilterSection: 
+* AvailableFilterSection: This is the component for the filter that can filter products by availability (pick up or delivery).
+
+* CartSection: This is the component for shopping cart section.
+
+* DisplayList: This is the component for the section showing all the products which also includes the **addToCart** function to add product to shopping cart and the **removeFromCart** function to remove the product from shopping cart.
+
+* GroceryItem: This is the component for each individual product. It includes the layout of a product: product image, product name, product type, availability, rating, price and two buttons for add and remove.
+
+* SortSection: This is the component for sort section, which includes two sort methods --- sort by price and sort by rating.
 
 ### How Data is Passed Down Through Components
 
