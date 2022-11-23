@@ -1,15 +1,16 @@
 # Development
 
-### Link to Deployed Website
-If you used the stencil code, this is `https://<your GitHub username>.github.io/<name of your repository>`
+#### Link to Deployed Website
+https://smartfox998.github.io/Grocery-Store/
 
-### Goal and Value of the Application
+#### Goal and Value of the Application
+This is an application used by 
 
-### Usability Principles Considered
+#### Usability Principles Considered
 
-### Organization of Components
+#### Organization of Components
 
-### How Data is Passed Down Through Components
+#### How Data is Passed Down Through Components
 
-### How the User Triggers State Changes
+#### How the User Triggers State Changes
 
