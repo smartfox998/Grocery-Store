@@ -4,7 +4,7 @@
 https://smartfox998.github.io/Grocery-Store/
 
 ### Goal and Value of the Application
-This is an application that can be used by grocery store. Users can add or remove products based on their requirements. Users can use the filters on the left to choose their preferred product type and delivery options. They can also sort the products by price and rating.
+This is an application that can be used by grocery store. Users can add or remove products based on their requirements. Users can use the filters on the left to choose their preferred product type and delivery option. They can also sort the products by price and rating.
 
 ### Usability Principles Considered
 
@@ -22,7 +22,7 @@ This is an application that can be used by grocery store. Users can add or remov
 
 * CartSection: This is the component for shopping cart section.
 
-* DisplayList: This is the component for the section showing all the products which also includes the **addToCart** function to add product to shopping cart and the **removeFromCart** function to remove the product from shopping cart.
+* DisplayList: This is the component for the section showing all the products which also includes the **addToCart** function to add products to shopping cart and the **removeFromCart** function to remove products from shopping cart.
 
 * GroceryItem: This is the component for each individual product. It includes the layout of a product: product image, product name, product type, availability, rating, price and two buttons for add and remove.
 
