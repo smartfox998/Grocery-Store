@@ -32,11 +32,11 @@ This is an application that can be used by grocery store. Users can add or remov
 
 * Products and total cost in the shopping cart: There is a state called **cart**, which contains two variables --- **items** (products in the shopping cart) and **price** (total cost). The state **cart** is passed through props to component **CartSection**. When users click the add button or the remove button of one product, the **items** and **price** will update.
 
-* Display products: There is a state called **data**, which is the current product list shown in the product section. When filters and sort method are applied, the product list will change and update by **setData** method. The state **data** is passed through props to component **DisplayList**.
+* Display products: There is a state called **data**, which is the current product list shown in the product section. When filter or sort method is applied, the product list will change and update by **setData** method. The state **data** is passed through props to component **DisplayList**.
 
-* Display products with different filters: There are two states called **filterType** and **filterAvailable**, which represent the value of type filter and value of availability filter (both are initialize to **All** at the begining). UseEffect hooks are used to update product list with filters. There is a method in **useEffect** called **filterItemByType** which is used to update products when users use the type filter. There is another method in **useEffect** called **filterItemByAvailable** which is used to update products when users use the availability filter.
+* Display products with different filters: There are two states called **filterType** and **filterAvailable**, which represent value of type filter and value of availability filter (both are initialize to **All** at the begining). UseEffect hooks are used to update product list with filters. There is a method in **useEffect** called **filterItemByType** which is used to update products when users use the type filter. There is a method in another **useEffect** called **filterItemByAvailable** which is used to update products when users use the availability filter.
 
-* Display products with different sort methods: There is a state called **sortType**, which is used to store the sort method (initialize to null at the begining). UseEffect hooks is used to update product list with different sort methods. There is a method in **useEffect** called **sortItems** which is used to update products when users use sort method.
+* Display products with different sort methods: There is a state called **sortType**, which is used to store the sort method (initialize to null at the begining). UseEffect hook is used to update product list with different sort method. There is a method in **useEffect** called **sortItems** which is used to update products when users use sort method.
 
 ### How the User Triggers State Changes
 
