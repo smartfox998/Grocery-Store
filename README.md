@@ -30,7 +30,7 @@ This is an application that can be used by grocery store. Users can add or remov
 
 ### How Data is Passed Down Through Components
 
-* Products and total cost in the shopping cart: There is a state called **cart**, which contains two variables --- **items** (products lsit in the shopping cart) and **price** (total cost). The state **cart** is passed through props to component **CartSection**. When users click the add button or the remove button of one product, the **items** and **price** will update.
+* Products and total cost in the shopping cart: There is a state called **cart**, which contains two variables --- **items** (products in the shopping cart) and **price** (total cost). The state **cart** is passed through props to component **CartSection**. When users click the add button or the remove button of one product, the **items** and **price** will update.
 
 * Display products: There is a state called **data**, which is the current product list shown in the product section. When filters and sort method are applied, the product list will change and update by **setData** method. The state **data** is passed through props to component **DisplayList**.
 
